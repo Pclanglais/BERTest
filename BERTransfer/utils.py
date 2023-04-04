@@ -13,3 +13,13 @@ def create_bertopic(ids, docs, language = "english", calculate_probabilities=Tru
   topics, probs = topic_model.fit_transform(docs, embeddings)
   bertopic_model = BERTopicM(ids = ids, topic_model = topic_model, topics = topics, probs = probs, embeddings = embeddings, similarity_threshold = similarity_threshold, document_selection = document_selection, add_meta_topics = True)
   return bertopic_model
+
+#The function to create apply the transfer of topics based on a previous dataset
+def create_bertransfer(docs, topic_embeddings = topic_embeddings, language = "english", bert_model = "all-MiniLM-L6-v2", min_cosine_distance = 0.5, max_documents_topics = 15000):
+  from sentence_transformers import SentenceTransformer
+  from BERTransfer import BERTopicM
+
+  sentence_model = SentenceTransformer("all-MiniLM-L6-v2")
+  embeddings = sentence_model.encode(docs, show_progress_bar=True)
+  bertransfer_model = BERTransferM(embeddings = embeddings, topic_embeddings = topic_embeddings, min_cosine_distance = 0.5, max_documents_topics = 15000)
+  return = bertransfer_model
