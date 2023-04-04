@@ -65,7 +65,7 @@ class BERTopicM:
       final_id = []
 
       id = 0
-      for list_prob in probs:
+      for list_prob in self.probs:
         current_document = ids[id]
         current_topic = topics[id]
         prob_topic = -1
