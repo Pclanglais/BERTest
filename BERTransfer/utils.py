@@ -15,7 +15,7 @@ def create_bertopic(ids, docs, language = "english", calculate_probabilities=Tru
   return bertopic_model
 
 #The function to create apply the transfer of topics based on a previous dataset
-def create_bertransfer(docs, topic_embeddings = topic_embeddings, language = "english", bert_model = "all-MiniLM-L6-v2", min_cosine_distance = 0.5, max_documents_topics = 15000):
+def create_bertransfer(docs, topic_embeddings = language = "english", bert_model = "all-MiniLM-L6-v2", min_cosine_distance = 0.5, max_documents_topics = 15000):
   from sentence_transformers import SentenceTransformer
   from BERTransfer import BERTransferM
 
