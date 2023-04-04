@@ -44,6 +44,7 @@ class BERTransferM:
     
     #Document transfer
     def document_topic(self, topic_document_id):
+        import pandas as pd
         topic_document = pd.read_csv(topic_document_id, sep='\t')
         topic_document = topic_document.loc[:,~topic_document.columns.str.contains('doc|topic_size', case=False)]
         self.document_dataset['topic_id'] = self.document_dataset['topic_id'].astype(str).astype(int)
