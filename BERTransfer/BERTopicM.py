@@ -180,9 +180,8 @@ class BERTopicM:
 
       id = 0
       for list_prob in self.probs:
-        current_document = docs[id]
-        current_topic = str(topics[id])
-        current_embedding = embeddings[id]
+        current_topic = str(self.topics[id])
+        current_embedding = self.embeddings[id]
         if current_topic in self.topic_embeddings:
           self.topic_embeddings[current_topic] = np.add(self.topic_embeddings[current_topic], current_embedding)
         else:
