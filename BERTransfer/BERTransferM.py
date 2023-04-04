@@ -20,7 +20,7 @@ class BERTransferM:
 
         #For each topic we retrieve the closest documents
         for current_topic in self.topic_embeddings:
-          distances = distance.cdist([self.topic_embeddings[current_topic]], embeddings, "cosine")[0]
+          distances = distance.cdist([self.topic_embeddings[current_topic]], self.embeddings, "cosine")[0]
           index_document_topic = np.argsort(distances)
 
           cosine_distance = 1
