@@ -1,5 +1,6 @@
 class BERTransferM:
-    def __init__(self, embeddings=None, topic_embeddings = None, min_cosine_distance = 0.5, max_documents_topics = 15000):
+    def __init__(self, ids = None, embeddings=None, topic_embeddings = None, min_cosine_distance = 0.5, max_documents_topics = 15000):
+        self.ids = ids
         self.topic_embeddings = topic_embeddings
         self.embeddings = embeddings
         self.min_cosine_distance = min_cosine_distance
@@ -26,7 +27,7 @@ class BERTransferM:
           cosine_distance = 1
           index_document = 0
           for document_in_topic in index_document_topic[0:self.max_documents_topics]:
-            text = ids[document_in_topic]
+            text = self.ids[document_in_topic]
             cosine_distance = 1-distances[document_in_topic]
             if(cosine_distance > self.min_cosine_distance):
               current_topic_list.append(str(current_topic))
