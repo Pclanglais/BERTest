@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='BERTransfert',
+    name='BERTransfer',
     version='0.1.0',
     description='A Python package for topic transfer based on BERTopic',
     author='Pierre-Carl Langlais',
