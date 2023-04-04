@@ -135,6 +135,7 @@ class BERTopicM:
     
     #A function to create the dataset of topics to be annotated
     def create_topic_dataset(self):
+      import pandas as pd
       topic_list_complete = []
       for topic_id in list(self.topic_word_3.keys()):
         if topic_id != -1:
