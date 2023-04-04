@@ -1,6 +1,7 @@
 class BERTopicM:
-    def __init__(self, topic_model = None, topics=None, probs=None, embeddings=None, similarity_threshold = 0.01, document_selection = 20, add_meta_topics = False):
+    def __init__(self, topic_model = None, ids = None, topics=None, probs=None, embeddings=None, similarity_threshold = 0.01, document_selection = 20, add_meta_topics = False):
         self.topic_model = topic_model
+        self.ids = ids
         self.topics = topics
         self.probs = probs
         self.embeddings = embeddings
