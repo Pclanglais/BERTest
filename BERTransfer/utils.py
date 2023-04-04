@@ -22,4 +22,4 @@ def create_bertransfer(docs, topic_embeddings = topic_embeddings, language = "en
   sentence_model = SentenceTransformer("all-MiniLM-L6-v2")
   embeddings = sentence_model.encode(docs, show_progress_bar=True)
   bertransfer_model = BERTransferM(embeddings = embeddings, topic_embeddings = topic_embeddings, min_cosine_distance = 0.5, max_documents_topics = 15000)
-  return = bertransfer_model
+  return bertransfer_model
