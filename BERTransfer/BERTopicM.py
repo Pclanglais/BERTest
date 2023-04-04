@@ -58,6 +58,7 @@ class BERTopicM:
     
     #A dataset of each document based on the BERTopic model
     def create_document_dataset(self):
+      import pandas as pd
       final_document = []
       final_prob = []
       final_topic = []
