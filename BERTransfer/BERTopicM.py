@@ -179,7 +179,7 @@ class BERTopicM:
       self.topic_embeddings = {}
 
       id = 0
-      for list_prob in probs:
+      for list_prob in self.probs:
         current_document = docs[id]
         current_topic = str(topics[id])
         current_embedding = embeddings[id]
