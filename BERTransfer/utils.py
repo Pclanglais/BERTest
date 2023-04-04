@@ -3,6 +3,7 @@
 def create_bertopic(docs, language = "english", calculate_probabilities=True, verbose=True, bert_model = "all-MiniLM-L6-v2", similarity_threshold = 0.01, document_selection = 20):
   from bertopic import BERTopic
   from sentence_transformers import SentenceTransformer
+  from BERTransfer import BERTopicM
 
   sentence_model = SentenceTransformer("all-MiniLM-L6-v2")
   embeddings = sentence_model.encode(docs, show_progress_bar=False)
