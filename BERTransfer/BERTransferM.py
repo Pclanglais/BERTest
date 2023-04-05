@@ -48,7 +48,8 @@ class BERTransferM:
         topic_document = pd.read_csv(topic_document_id, sep='\t')
         topic_document = topic_document.loc[:,~topic_document.columns.str.contains('doc|topic_size', case=False)]
         self.document_dataset['topic_id'] = self.document_dataset['topic_id'].astype(str).astype(int)
-        self.document_dataset = topic_document.merge(self.document_dataset, on="topic_id")
+        result_dataset = topic_document.merge(self.document_dataset, on="topic_id")
+        return result_dataset
 
     def __repr__(self):
         return f"A BERTransfer model with {self.topic_size} topics and {self.document_size} documents."
